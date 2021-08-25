@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Kmoucea">
+  <meta name="keywords" content="핵심역량 테스트">
+  <meta name="description" content="핵심역량 테스트">
+
+
+  <meta property="og:url" content="https://kmoutest.netlify.app" />
+  <meta property="og:title" content="핵심역량 테스트" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/share.png" />
+  <meta property="og:description" content="한국해양대학교 핵심역량 테스트" />
+
+
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="img/favicon.ico" />
+
+  <title>한국해양대학교 핵심역량 테스트</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/qna.css">
+  <link rel="stylesheet" href="./css/animation.css">
+  <link rel="stylesheet" href="./css/result.css">
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script>
+    Kakao.init('83f8fc89285a265f9028c894e957b0f5');
+    Kakao.isInitialized();
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN07M94YYT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YN07M94YYT');
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <section id="main" class="mx-auto my-5 py-5 px-3">
+      <h1>내가 키워야할 핵심역량 알아보기</h1>
+      <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+        <img src="./img/main.png" alt="mainImage" class="img-fluid">
+      </div>
+      <p>
+        나에게 맞는 한국해양대학교 핵심역량을 찾아보는 테스트입니다! <br>
+        아래 시작하기 버튼을 눌러 시작해 주십시오.
+      </p>
+      <!-- 학번 & 이름 입력 폼 추가 -->
+      <
+       <div class="text-center card p-5 mx-auto m-5" >
+        <form class="form-signin">
+            <label for="student-id" class="sr-only">학년</label>
+            <input type="text" id="student-id" class="form-control" placeholder="학년을 입력해주세요." required autofocus>
+            <label for="student-name" class="sr-only">학부(과)</label>
+            <input type="text" id="student-name" class="form-control" placeholder="학부(과)를 입력해주세요." required>
+            <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">시작하기</button> -->
+            <button type="button" id="start-btn" class="btn btn-outline-danger mt-3"onclick="js:begin()">시작하기</button>
+        </form>
+      </div>
+      <!-- <button type="button" id="start-btn" class="btn btn-outline-danger mt-3" onclick="js:begin()">시작하기</button> -->
+
+    </section>
+    <section id="qna">
+      <div class="status mx-auto mt-5">
+        <div class="statusBar">
+        </div>
+      </div>
+      <div class="qBox my-5 py-3 mx-auto">
+
+      </div>
+      <div class="answerBox">
+
+      </div>
+    </section>
+    <section id="result" class="mx-auto my-5 py-5 px-3">
+      <h1>당신의 결과는?!</h1>
+      <div class="resultname">
+
+      </div>
+      <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+
+      </div>
+      <div class="resultDesc">
+
+      </div>
+      <button type="button" class="kakao mt-3 py-2 px-3" onclick="js:setShare()">공유하기</button>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="./js/data.js" charset="utf-8"></script>
+    <script src="./js/start.js" charset="utf-8"></script>
+    <script src="./js/share.js" charset="utf-8"></script>
+    <script>
+      // localStorage에 학번, 이름을 저장합니다.
+      const startBtn = document.querySelector("#start-btn");
+      startBtn.addEventListener("click", () => {
+        const studentId = document.getElementById("student-id").value;
+        const studentName = document.getElementById("student-name").value;
+        console.log(studentId, studentName);
+        // localStrage에 정보 저장
+        const student = JSON.stringify({ id: studentId, name: studentName });
+        localStorage.setItem("student", student);
+
+        // 만약 정보 저장된걸 확인하고 싶으면
+        const savedStudent = JSON.parse(localStorage.getItem("student"));
+        console.log(savedStudent);
+      })
+
+    </script>
+  </div>
+</body>
+
+</html>

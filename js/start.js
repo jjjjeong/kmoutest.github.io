@@ -4,6 +4,7 @@ const result = document.querySelector("#result");
 
 const endPoint = 12;
 const select = [0, 0, 0, 0, 0, 0, 0, 0];
+const answerList = [0,0,0,0,0,0,0,0,0,0,0,0];
 
 function calResult(){
   console.log(select);
@@ -15,6 +16,7 @@ function setResult(){
   let point = calResult();
   const resultName = document.querySelector('.resultname');
   resultName.innerHTML = infoList[point].name;
+  console.log(answerList);
 
   var resultImg = document.createElement('img');
   const imgDiv = document.querySelector('#resultImg');
@@ -54,6 +56,7 @@ function addAnswer(answerText, qIdx, idx){
   answer.innerHTML = answerText;
 
   answer.addEventListener("click", function(){
+    answerList[qIdx]=idx;
     var children = document.querySelectorAll('.answerList');
     for(let i = 0; i < children.length; i++){
       children[i].disabled = true;

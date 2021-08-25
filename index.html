@@ -108,7 +108,7 @@
         const studentName = document.getElementById("student-name").value;
         console.log(studentId, studentName);
         // localStrage에 정보 저장
-        const student = JSON.stringify({ id: studentId, name: studentName });
+        const student = JSON.stringify({ id: studentId, name: studentName, data:result });
         localStorage.setItem("student", student);
 
         // 만약 정보 저장된걸 확인하고 싶으면

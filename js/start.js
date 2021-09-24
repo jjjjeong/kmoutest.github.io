@@ -22,8 +22,7 @@ function setResult(){
     let temp = document.createElement("li");
     let tempT = qnaList[i].q + " : " +  qnaList[i].a[answerList[i]].answer;
     temp.innerText = tempT;
-    AnswerGroup.appendChild(temp);
-  }-->
+    AnswerGroup.appendChild(temp);} -->
   
 
   var resultImg = document.createElement('img');

@@ -35,7 +35,7 @@
   border-radius: 20px;
 }
 
-.face:hover, .kakao:focus {
+.face:hover, .kakao:face {
   background-color: whitesmoke;
   color: #FEE500;
 }

@@ -27,6 +27,18 @@
   color: #FEE500;
 }
 
+.face{
+  color: black;
+  background-color: #91d9fa;
+  font-size: 20px;
+  border: 0px;
+  border-radius: 20px;
+}
+
+.face:hover, .kakao:focus {
+  background-color: whitesmoke;
+  color: #FEE500;
+}
 .gohome{
   color: white;
   background-color: pink;

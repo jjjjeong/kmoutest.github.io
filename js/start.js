@@ -17,15 +17,14 @@ function setResult(){
   const resultName = document.querySelector('.resultname');
   resultName.innerHTML = infoList[point].name;
   
-  const AnswerGroup = document.querySelector(".AnswerGroup");
+ <!-- const AnswerGroup = document.querySelector(".AnswerGroup");
   for(let i=0;i<endPoint;i++){
     let temp = document.createElement("li");
     let tempT = qnaList[i].q + " : " +  qnaList[i].a[answerList[i]].answer;
     temp.innerText = tempT;
     AnswerGroup.appendChild(temp);
-  }
+  } -->
   
-    
 
   var resultImg = document.createElement('img');
   const imgDiv = document.querySelector('#resultImg');
